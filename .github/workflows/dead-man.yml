@@ -1,0 +1,27 @@
+# Tells Healthchecks.io each time Upptime's probe workflow finishes, so a probe workflow that
+# stops running (an expired token, a disabled schedule) is noticed. Upptime's template updater
+# rewrites only its own eight workflow files and leaves this one alone.
+name: Dead-man
+
+on:
+  # Safe here: no checkout, no permissions, and only the run's conclusion is read.
+  workflow_run: # zizmor: ignore[dangerous-triggers]
+    workflows: ["Uptime CI"]
+    types: [completed]
+
+permissions: {}
+
+jobs:
+  ping:
+    name: Ping Healthchecks
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    env:
+      HC_URL: ${{ secrets.HC_UPPTIME_PING_URL }}
+    steps:
+      - name: Report a finished probe run
+        if: github.event.workflow_run.conclusion == 'success'
+        run: curl -fsS -m 10 --retry 3 -o /dev/null "$HC_URL"
+      - name: Report a failed probe run
+        if: github.event.workflow_run.conclusion == 'failure'
+        run: curl -fsS -m 10 --retry 3 -o /dev/null "$HC_URL/fail"

@@ -1,0 +1,55 @@
+# hackrdev.academy's public status record. Upptime probes the two sites below every five minutes
+# from GitHub Actions and keeps the history in this repository.
+owner: hackrdev-academy
+repo: status
+
+sites:
+  - name: API health
+    url: https://hackrdev.academy/health
+    expectedStatusCodes:
+      - 200
+  - name: Platform status
+    url: https://hackrdev.academy/status
+    expectedStatusCodes:
+      - 200
+    # The status object always carries this field; a 200 without it is not the platform's answer.
+    __dangerous__body_down_if_text_missing: '"components"'
+
+# The token is scoped to this repository's contents, issues and workflows, so the three
+# repository-settings updates Upptime would otherwise try are turned off.
+skipDescriptionUpdate: true
+skipTopicsUpdate: true
+skipHomepageUpdate: true
+
+status-website:
+  baseUrl: /status
+  name: hackrdev.academy status
+  introTitle: "**hackrdev.academy** status"
+  introMessage: Live availability of the platform, probed every five minutes. Incidents are recorded as issues in this repository.
+  theme: dark
+  # The platform's colours (its design system's status, background and text tokens), over the
+  # dark theme. `html:root` outranks the theme's own `:root` block, which loads after this.
+  customHeadHtml: >-
+    <style>html:root{
+    --body-background-color:#13141A;
+    --body-text-color:#F0F0F0;
+    --card-background-color:#2A2B33;
+    --card-border-color:#3A3B45;
+    --nav-background-color:#2A2B33;
+    --nav-border-bottom-color:#3A3B45;
+    --nav-current-border-bottom-color:#F97316;
+    --up-border-left-color:#22C55E;
+    --tag-up-background-color:#22C55E;
+    --degraded-border-left-color:#EAB308;
+    --tag-degraded-background-color:#EAB308;
+    --change-background-color:#EAB308;
+    --down-border-left-color:#EF4444;
+    --tag-down-background-color:#EF4444;
+    --down-background-color:#5C1A1A;
+    --tag-color:#13141A;
+    }</style>
+  navbar:
+    - title: Status
+      href: /status/
+    - title: GitHub
+      href: https://github.com/$OWNER/$REPO
