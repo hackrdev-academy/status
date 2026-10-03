@@ -1,6 +1,5 @@
 # Tells Healthchecks.io each time Upptime's probe workflow finishes, so a probe workflow that
-# stops running (an expired token, a disabled schedule) is noticed. Upptime's template updater
-# rewrites only its own eight workflow files and leaves this one alone.
+# stops running (an expired token, a disabled schedule) is noticed.
 name: Dead-man
 
 on:
