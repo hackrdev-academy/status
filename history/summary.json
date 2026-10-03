@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "name": "API health",
+    "url": "https://hackrdev.academy/health",
+    "icon": "https://icons.duckduckgo.com/ip3/hackrdev.academy.ico",
+    "slug": "api-health",
+    "status": "up",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 414,
+    "timeDay": 414,
+    "timeWeek": 414,
+    "timeMonth": 414,
+    "timeYear": 414,
+    "dailyMinutesDown": {}
+  },
+  {
+    "name": "Platform status",
+    "url": "https://hackrdev.academy/status",
+    "icon": "https://icons.duckduckgo.com/ip3/hackrdev.academy.ico",
+    "slug": "platform-status",
+    "status": "up",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 171,
+    "timeDay": 171,
+    "timeWeek": 171,
+    "timeMonth": 171,
+    "timeYear": 171,
+    "dailyMinutesDown": {}
+  }
+]
