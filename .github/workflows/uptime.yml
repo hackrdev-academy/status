@@ -2,6 +2,8 @@
 # Held by hand. This organisation runs only allow-listed actions pinned by commit, so Upptime's
 # self-updater is removed and every action below is pinned. To update Upptime, bump the pins in
 # a reviewed change.
+# GitHub runs the schedule as the account that last committed this file, so that commit must
+# belong to a GitHub user.
 #
 # 🔼 Upptime @v1.44.1
 # GitHub-powered open-source uptime monitor and status page by Anand Chowdhary
